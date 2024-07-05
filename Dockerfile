@@ -37,7 +37,7 @@ RUN echo "Verifying Chrome installation..." && \
     which google-chrome-stable && \
     ls -l /usr/bin/google-chrome-stable
 
-WORKDIR /
+WORKDIR /usr/src/app
 
 COPY package*.json ./
 RUN npm ci
