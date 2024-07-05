@@ -1,5 +1,6 @@
 const express = require('express');
 const cors = require('cors');
+require('dotenv').config();
 const puppeteer = require('puppeteer');
 const app = express();
 const port = process.env.PORT || 3000;
@@ -71,6 +72,11 @@ app.post('/newrank', async (req, res) => {
 app.get('/newcontestdetails', async (req, res) => {
     try {
         const browser = await puppeteer.launch({ 
+            args: ['--no-sandbox', '--disable-setuid-sandbox', '--no-zygote'],
+            executablePath: 
+            process.env.NODE_ENV ==='production'
+            ? process.env.PUPPETEER_EXECUTABLE_PATH
+            : puppeteer.executablePath(),
             headless: true
          });
         const page = await browser.newPage();
