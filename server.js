@@ -140,6 +140,12 @@ function convertDateTimeToIST(inputDate) {
 
       hours+=5;
       minutes+=30;
+
+        if(minutes>=60){
+            minutes-=60;
+            hours+=1;
+        }
+
      
       var ampm = hours >= 12 ? 'PM' : 'AM';  
         
