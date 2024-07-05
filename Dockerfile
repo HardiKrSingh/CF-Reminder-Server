@@ -3,7 +3,7 @@ FROM ghcr.io/puppeteer/puppeteer:22.12.1
 ENV PUPPETEER_SKIP_DOWNLOAD true
 ENV PUPPETEER_EXECUTABLE_PATH=google-chrome-stable
 
-WORKDIR /usr/src/app
+WORKDIR /
 
 
 COPY package*.json ./
