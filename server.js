@@ -99,7 +99,7 @@ app.get('/newcontestdetails', async (req, res) => {
         await browser.close();
 
         if (contestDateTime&&contestName) {
-            console.log('Contest name, date and time fetched successfully:', contestDateTime     ,contestName);
+            console.log('Contest name, date and time fetched successfully:', contestDateTime,contestName);
         
             var contestInfo = (convertDateTimeToIST(contestDateTime));
             contestInfo['contestName'] = contestName;
@@ -125,10 +125,10 @@ function convertDateTimeToIST(inputDate) {
      
       var [datePart, timePart] = inputDate.split(' ');
       var [month, day, year] = datePart.split('/');
-      var [time, utcOffset] = timePart.split('UTC');
+      var time = timePart.split('UTC');
       var [hours, minutes] = time.split(':');
 
-      if (!months[month] || !day || !year || !time || !utcOffset) {
+      if (!months[month] || !day || !year || !time) {
         throw new Error('Invalid input date format');
       }
   
