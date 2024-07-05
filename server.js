@@ -125,7 +125,7 @@ function convertDateTimeToIST(inputDate) {
      
       var [datePart, timePart] = inputDate.split(' ');
       var [month, day, year] = datePart.split('/');
-      var time = timePart.split('UTC');
+      var [time, utcOffset] = timePart.split('UTC');
       var [hours, minutes] = time.split(':');
 
       if (!months[month] || !day || !year || !time) {
