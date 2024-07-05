@@ -137,6 +137,9 @@ function convertDateTimeToIST(inputDate) {
       year = parseInt(year);
       hours = parseInt(hours);
       minutes = parseInt(minutes);
+
+      hours+=5;
+      minutes+=30;
      
       var ampm = hours >= 12 ? 'PM' : 'AM';  
         
