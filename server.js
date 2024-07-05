@@ -72,7 +72,7 @@ app.post('/newrank', async (req, res) => {
 app.get('/newcontestdetails', async (req, res) => {
     try {
         const browser = await puppeteer.launch({ 
-            args: ['--no-sandbox', '--disable-setuid-sandbox', '--no-zygote'],
+            args: ['--no-sandbox', '--disable-setuid-sandbox', '--no-zygote','--single-process'],
             executablePath: 
             process.env.NODE_ENV ==='production'
             ? process.env.PUPPETEER_EXECUTABLE_PATH
