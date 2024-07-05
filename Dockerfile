@@ -30,7 +30,7 @@ RUN apt-get update && apt-get install -y \
     --no-install-recommends \
     && rm -rf /var/lib/apt/lists/*
 
-WORKDIR /
+WORKDIR /usr/src/app
 
 COPY package*.json ./
 RUN npm ci
