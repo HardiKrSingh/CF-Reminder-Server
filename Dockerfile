@@ -15,6 +15,9 @@ FROM ghcr.io/puppeteer/puppeteer:22.12.1
 
 ENV PUPPETEER_SKIP_DOWNLOAD true
 
+ENV PUPPETEER_EXECUTABLE_PATH=/usr/bin/google-chrome-stable
+
+
 RUN apt-get update && apt-get install -y \
     wget \
     gnupg \
