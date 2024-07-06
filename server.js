@@ -22,12 +22,16 @@ app.post('/newrating', async (req, res) => {
        var data = await response.json();
        var rating = data.result[0].rating; 
        var maxRating = data.result[0].maxRating;
+       var rank = data.result[0].rank; 
+       var maxRank = data.result[0].maxRank;
 
         if (rating) {
                 console.log('Rating fetched successfully:', rating);
                 res.json({ 
                     rating: rating,
-                    maxRating: maxRating 
+                    maxRating: maxRating,
+                    rank: rank,
+                    maxRank: maxRank
                 });
             } else {
                 res.status(404).json({ error: 'Rating not found' });
